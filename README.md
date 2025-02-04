@@ -2,7 +2,8 @@
 
 ASP.NET Core MVC ile oluşturulmuş temel bir müşteri ve sipariş yönetim uygulaması.
 
-![Örnek Ekran Görüntüsü](![resim](https://github.com/user-attachments/assets/e2ba355a-d63d-47a2-8e05-3b7017d2d29e))
+![resim](https://github.com/user-attachments/assets/f3257fe3-8b48-4574-873a-8bf7f3b43053)
+
 
 ## Özellikler
 - 🧑💼 Müşteri bilgileri görüntüleme
