@@ -1,0 +1,57 @@
+﻿@model MVC_Basic_Practical.Models.ViewModels.CustomerOrderViewModel
+
+@{
+    ViewData["Title"] = "Customer Orders";
+}
+
+<h2>Müşteri Bilgileri</h2>
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <td>@Model.Customer.Id</td>
+    </tr>
+    <tr>
+        <th>Ad</th>
+        <td>@Model.Customer.FirstName</td>
+    </tr>
+    <tr>
+        <th>Soyad</th>
+        <td>@Model.Customer.LastName</td>
+    </tr>
+    <tr>
+        <th>E-posta</th>
+        <td>@Model.Customer.Email</td>
+    </tr>
+</table>
+
+<h2>Siparişler</h2>
+@if (Model.Orders.Any())
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Sipariş ID</th>
+                <th>Ürün Adı</th>
+                <th>Adet</th>
+                <th>Fiyat</th>
+                <th>Toplam</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var order in Model.Orders)
+            {
+                <tr>
+                    <td>@order.Id</td>
+                    <td>@order.ProductName</td>
+                    <td>@order.Quantity</td>
+                    <td>@order.Price.ToString("C")</td>
+                    <td>@(order.Quantity * order.Price)</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>Bu müşteriye ait sipariş bulunmamaktadır.</p>
+}
